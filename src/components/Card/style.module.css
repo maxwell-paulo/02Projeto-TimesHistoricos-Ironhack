@@ -1,14 +1,19 @@
 .card {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 200px;
-    width: 270px;
-    border: 5px solid rgb(255, 255, 255);
-    display: flex;
-    justify-content: space-around;    
+  background-image: url("../../images/team-card-layout.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 270px;
+  width: 200px;
+  border: 2px solid black;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .teamLogo img {
-    width: 40px;
+  width: 80px;
+  margin-top: 50px;
 }
