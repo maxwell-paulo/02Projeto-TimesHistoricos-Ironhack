@@ -1,0 +1,14 @@
+.card {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 200px;
+    width: 270px;
+    border: 5px solid rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-around;    
+}
+
+.teamLogo img {
+    width: 40px;
+}
