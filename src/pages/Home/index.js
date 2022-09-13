@@ -31,10 +31,12 @@ export function Home() {
             <img src={logo} alt="logo"/>
         </header>
         <main className={style.cards}>
-            <img className={style.addBtn} src={addBtn} alt="Add button"/>
+            <Link to={"/add-cromo"}>
+                <img className={style.addBtn} src={addBtn} alt="Add button"/>
+            </Link>
             {cards.slice(0).reverse().map((currentCard) => {
                     return <>
-                    <Link to={`/info/${currentCard._id}`}>
+                    <Link to={`/info-cromo/${currentCard._id}`}>
                         <Card team={currentCard.team} year={currentCard.year} team_logo={currentCard.team_logo}/>
                     </Link>
                     </>
