@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { AddCromo } from "./pages/AddCromo";
+import {InfoCromo} from "./pages/InfoCromo"
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/add-cromo" element={<AddCromo />} />
-        {/* <Route path="/edit/:id" element={<EditPage />} /> */}
+        <Route path="/info-cromo/:id" element={<InfoCromo />} />
       </Routes>
     </div>
   );
