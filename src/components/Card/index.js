@@ -1,17 +1,17 @@
-import style from "./style.module.css"
+import style from "./style.module.css";
 
 export function Card(props) {
-    const { team, year, team_img, team_logo} = props
-    
-    return <>
-        <div className={style.card} style={{
-          backgroundImage: `url(${team_img})`,
-        }}>
-            <div className={style.teamLogo}>
-            <img src={team_logo} alt="Team Logo"/></div>
-            <h1>{team}</h1>
-            <h2>{year}</h2>
+  const { team, year, team_img, team_logo } = props;
+
+  return (
+    <>
+      <div className={style.card}>
+        <div className={style.teamLogo}>
+          <img src={team_logo} alt="Team Logo" />
         </div>
-        
+        <h1>{team}</h1>
+        <h2>{year}</h2>
+      </div>
     </>
+  );
 }
