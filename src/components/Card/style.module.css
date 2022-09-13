@@ -1,19 +1,52 @@
+* {
+    margin: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+}
+
 .card {
-  background-image: url("../../images/team-card-layout.png");
+  background-image: url("../../images/team-card-layout2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 270px;
+  height: 260px;
   width: 200px;
   border: 2px solid black;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
-  margin-bottom: 10px;
+  justify-content: space-between;
+}
+
+.teamLogo {
+    width: 200px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .teamLogo img {
-  width: 80px;
-  margin-top: 50px;
+  height: 80px;
+  margin-top: 75px;
+}
+
+.cardNames {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardNames h1 {
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    margin-bottom: 0px;
+}
+
+.cardNames h2 {
+    font-size: 0.8em;
+    color: white;
+    margin-bottom: 16px;
+    text-decoration: none;
 }

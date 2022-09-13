@@ -9,8 +9,10 @@ export function Card(props) {
         <div className={style.teamLogo}>
           <img src={team_logo} alt="Team Logo" />
         </div>
-        <h1>{team}</h1>
-        <h2>{year}</h2>
+        <div className={style.cardNames}>
+            <h1>{team}</h1>
+            <h2>{year}</h2>
+        </div>
       </div>
     </>
   );

@@ -27,7 +27,7 @@ export function Home() {
         <h1>Times históricos do futebol</h1>
         {cards.map((currentCard) => {
                 return <>
-                <Link to={`/edit/${currentCard._id}`}>
+                <Link to={`/info/${currentCard._id}`}>
                     <Card team={currentCard.team} year={currentCard.year} team_img={currentCard.team_img} team_logo={currentCard.team_logo}/>
                 </Link>
                 </>
