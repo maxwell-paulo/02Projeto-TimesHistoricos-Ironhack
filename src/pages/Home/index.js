@@ -1,7 +1,10 @@
 import { Card } from "../../components/Card"
+import style from "./style.module.css";
 import { useState, useEffect } from "react"
 import{ Link } from "react-router-dom"
 import axios from "axios"
+import addBtn from "../../images/Add-Button.png"
+import logo from "../../images/logo-historic-soccer-teams.png"
 
 
 export function Home() {
@@ -24,14 +27,18 @@ export function Home() {
     }, [])
     
     return <>
-        <h1>Times históricos do futebol</h1>
-        {cards.map((currentCard) => {
-                return <>
-                <Link to={`/info/${currentCard._id}`}>
-                    <Card team={currentCard.team} year={currentCard.year} team_img={currentCard.team_img} team_logo={currentCard.team_logo}/>
-                </Link>
-                </>
-            })}
-        
+        <header className={style.headerHome}>
+            <img src={logo} alt="logo"/>
+        </header>
+        <main className={style.cards}>
+            <img className={style.addBtn} src={addBtn} alt="Add button"/>
+            {cards.map((currentCard) => {
+                    return <>
+                    <Link to={`/info/${currentCard._id}`}>
+                        <Card team={currentCard.team} year={currentCard.year} team_logo={currentCard.team_logo}/>
+                    </Link>
+                    </>
+                })}
+        </main>
     </>
 }
