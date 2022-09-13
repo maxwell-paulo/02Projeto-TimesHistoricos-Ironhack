@@ -6,11 +6,6 @@ import { useNavigate } from "react-router-dom";
 export function AddCromo() {
   const navigate = useNavigate();
 
-  const [players, setPlayers] = useState({
-    player_name: "",
-    position: "",
-  });
-
   const [form, setForm] = useState({
     team: "",
     year: 0,
@@ -24,8 +19,32 @@ export function AddCromo() {
     _is_locked: false,
   });
 
+  const [titles, setTitles] = useState({
+    title: "",
+  });
+
+  const [players, setPlayers] = useState({
+    player_name: "",
+    position: "",
+  });
+
+  function titleHandleChange(e) {
+    setTitles({ ...titles, [e.target.name]: e.target.value });
+    console.log(titles);
+  }
+
+  function handleAddTitle(e) {
+    e.preventDefault();
+
+    setForm({
+      ...form,
+      titles: [...form.titles, titles],
+    });
+    console.log(titles);
+  }
+
   function playerHandleChange(e) {
-    setPlayers({ [e.target.name]: e.target.value });
+    setPlayers({ ...players, [e.target.name]: e.target.value });
     console.log(players);
   }
 
@@ -34,7 +53,7 @@ export function AddCromo() {
 
     setForm({
       ...form,
-      players: [{ ...players }, players],
+      players: [...form.players, players],
     });
     console.log(form);
   }
@@ -114,12 +133,14 @@ export function AddCromo() {
         <label htmlFor="titulos">Títulos:</label>
         <input
           id="titulos"
-          name="titles"
+          name="title"
           type="text"
-          value={form.titles}
-          onChange={handleChange}
+          value={titles.title}
+          onChange={titleHandleChange}
         />
-        <button type="submit">Adicionar</button>
+        <button type="button" onClick={handleAddTitle}>
+          Adicionar
+        </button>
 
         <div>Os titulos devem aparecer aqui</div>
 
@@ -176,16 +197,18 @@ export function AddCromo() {
             Posição
           </option>
           <option value="Goleiro">Goleiro</option>
-          <option value="Defesa">Defesa</option>
+          <option value="Defensor">Defensor</option>
           <option value="Meio-campista">Meio-campista</option>
           <option value="Atacante">Atacante</option>
         </select>
+        <button type="button" onClick={handleAddPlayer}>
+          Adicionar
+        </button>
 
         <div>Os jogadores e as posições devem aparecer aqui</div>
 
         <button type="submit">COLAR!</button>
       </form>
-      <button onClick={handleAddPlayer}>Adicionar</button>
     </>
   );
 }
