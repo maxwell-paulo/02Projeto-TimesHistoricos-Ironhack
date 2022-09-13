@@ -32,7 +32,7 @@ export function Home() {
         </header>
         <main className={style.cards}>
             <img className={style.addBtn} src={addBtn} alt="Add button"/>
-            {cards.map((currentCard) => {
+            {cards.slice(0).reverse().map((currentCard) => {
                     return <>
                     <Link to={`/info/${currentCard._id}`}>
                         <Card team={currentCard.team} year={currentCard.year} team_logo={currentCard.team_logo}/>
