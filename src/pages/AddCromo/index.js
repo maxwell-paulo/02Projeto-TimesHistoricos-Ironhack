@@ -19,18 +19,24 @@ export function AddCromo() {
     titles: [],
     formation: "",
     coach: "",
-    players: [players],
+    players: [],
     about: "",
     _is_locked: false,
   });
 
   function playerHandleChange(e) {
-    setPlayers({ ...players, [e.target.name]: e.target.value });
+    setPlayers({ [e.target.name]: e.target.value });
+    console.log(players);
+  }
+
+  function handleAddPlayer(e) {
+    e.preventDefault();
+
     setForm({
       ...form,
-      players: { ...players, [e.target.name]: e.target.value },
+      players: [{ ...players }, players],
     });
-    console.log(players);
+    console.log(form);
   }
 
   function handleChange(e) {
@@ -166,7 +172,7 @@ export function AddCromo() {
           value={players.position}
           onChange={playerHandleChange}
         >
-          <option hidden selected>
+          <option hidden defaultValue>
             Posição
           </option>
           <option value="Goleiro">Goleiro</option>
@@ -175,12 +181,11 @@ export function AddCromo() {
           <option value="Atacante">Atacante</option>
         </select>
 
-        <button type="submit">Adicionar</button>
-
         <div>Os jogadores e as posições devem aparecer aqui</div>
 
         <button type="submit">COLAR!</button>
       </form>
+      <button onClick={handleAddPlayer}>Adicionar</button>
     </>
   );
 }
