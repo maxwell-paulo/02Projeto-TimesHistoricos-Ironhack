@@ -20,9 +20,15 @@ export function EditPage() {
     _is_locked: false,
   });
 
-  const [title, setTitle] = useState({
-    titles: [],
+  const [titles, setTitles] = useState({
+    title: "",
   });
+
+  const [players, setPlayers] = useState({
+    player_name: "",
+    position: "",
+  });
+
   useEffect(() => {
     async function fetchCromo() {
       try {
@@ -31,21 +37,45 @@ export function EditPage() {
         );
         delete response.data._id;
         setForm({ ...response.data });
-        setTitle({ titles: [...response.data.titles] });
+
+        console.log(titles);
       } catch (err) {
         console.log(err);
       }
     }
     fetchCromo();
-    console.log(title);
-  }, [id]);
+  }, []);
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
     console.log(form);
   }
 
-  function handleChangeTitle(e) {}
+  function handleChangeTitle(e) {
+    setTitles({ ...titles, [e.target.name]: e.target.value });
+  }
+  function handleAddTitle(e) {
+    e.preventDefault();
+
+    setForm({
+      ...form,
+      titles: [...form.titles, titles],
+    });
+    console.log(titles);
+  }
+
+  function handleChangePlayer(e) {
+    setPlayers({ ...players, [e.target.name]: e.target.value });
+  }
+
+  function handleAddPlayer(e) {
+    e.preventDefault();
+    setForm({
+      ...form,
+      players: [...form.players, players],
+    });
+    console.log(form);
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -64,6 +94,19 @@ export function EditPage() {
     }
   }
 
+  function handleDeleteTitle(title) {
+    let newTitles = form.titles.filter((current) => {
+      return current !== title;
+    });
+    setForm({ ...form, titles: [...newTitles] });
+  }
+
+  function handleDeletePlayer(jogador) {
+    let newPlayers = form.players.filter((current) => {
+      return current !== jogador;
+    });
+    setForm({ ...form, players: [...newPlayers] });
+  }
   return (
     <>
       <h1>Cole uma figurinha</h1>
@@ -114,17 +157,31 @@ export function EditPage() {
           onChange={handleChange}
         />
 
-        <label htmlFor="titulos">Títulos:</label>
+        <label htmlFor="titulos">Títulos</label>
+        <input
+          id="titulos"
+          name="title"
+          type="text"
+          value={titles.title}
+          onChange={handleChangeTitle}
+        />
+        <button type="button" onClick={handleAddTitle}>
+          Adicionar
+        </button>
 
         {form.titles.map((current) => {
           return (
-            <input
-              id="titulos"
-              name="title"
-              type="text"
-              value={current.title}
-              onChange={handleChangeTitle}
-            />
+            <div>
+              <p>{current.title}</p>
+              <button
+                type="button"
+                onClick={() => {
+                  handleDeleteTitle(current);
+                }}
+              >
+                Deletar
+              </button>
+            </div>
           );
         })}
 
@@ -159,8 +216,39 @@ export function EditPage() {
           onChange={handleChange}
         />
         <p>Jogadores Titulares</p>
+
         <label htmlFor="jogadores">Jogador</label>
+        <input
+          id="jogadores"
+          name="player_name"
+          type="text"
+          value={players.player_name}
+          onChange={handleChangePlayer}
+        />
         <label htmlFor="posicao">Posição</label>
+        <select
+          id="posicao"
+          name="position"
+          value={players.position}
+          onChange={handleChangePlayer}
+        >
+          <option hidden defaultValue>
+            Posição
+          </option>
+          <option disabled>Posição</option>
+          <option value="Goleiro">Goleiro</option>
+          <option value="Defensor">Defensor</option>
+          <option value="Meio-campista">Meio-campista</option>
+          <option value="Atacante">Atacante</option>
+        </select>
+        <button type="button" onClick={handleAddPlayer}>
+          Adicionar
+        </button>
+
+        <div>
+          <label htmlFor="jogadores">Jogador</label>
+          <label htmlFor="posicao">Posição</label>
+        </div>
 
         {form.players.map((current) => {
           return (
@@ -184,11 +272,18 @@ export function EditPage() {
                 <option value="Meio-campista">Meio-campista</option>
                 <option value="Atacante">Atacante</option>
               </select>
+
+              <button
+                type="button"
+                onClick={() => {
+                  handleDeletePlayer(current);
+                }}
+              >
+                Deletar
+              </button>
             </div>
           );
         })}
-
-        <div>Os jogadores e as posições devem aparecer aqui</div>
 
         <button type="submit">COLAR!</button>
       </form>
