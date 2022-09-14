@@ -67,15 +67,9 @@ export function InfoCromo() {
           <img src={card.team_logo} alt="Escudo do time" />
           <h1>{card.team}</h1>
         </div>
-        <div className={style.infoButtons}>
-            <Link to={`/edit/${id}`}>
-              <button className={style.editBtn}></button>
-            </Link>
-            <button className={style.deleteBtn} onClick={handleToast}></button>
-        </div>
         <div className={style.infosAbout}>
-          <img className={style.teamImg} src={card.team_img} alt='Imagem do time'/>
           <h2>Ano: {card.year}</h2>
+          <img className={style.teamImg} src={card.team_img} alt='Imagem do time'/>
           <p>{card.about}</p>
           <h2>Escalação:</h2>
           <h3>Técnico: {card.coach}</h3>
@@ -96,6 +90,12 @@ export function InfoCromo() {
                       </>
                   })}
           </ul>
+        </div>
+        <div className={style.infoButtons}>
+            <Link to={`/edit/${id}`}>
+              <button className={style.editBtn}></button>
+            </Link>
+            <button className={style.deleteBtn} onClick={handleToast}></button>
         </div>
       </main>
     </div>

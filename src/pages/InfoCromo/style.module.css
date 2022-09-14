@@ -57,7 +57,12 @@
 }
 
 .infoButtons {
-    margin: 30px 30px;
+    width: 80px;
+    height: 40px;
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .editBtn {
@@ -66,7 +71,7 @@
     background: url('../../images/Edit_icon.png');
     background-size: cover;
     border: none;
-    margin-right: 10px;
+    cursor: pointer;
 }
 
 .deleteBtn {
@@ -75,6 +80,7 @@
     background: url('../../images/trash_icon.png');
     background-size: cover;
     border: none;
+    cursor: pointer;
 }
 
 .toastBtns {
@@ -106,6 +112,7 @@
 
 .teamImg {
     width: 100%;
+    margin-bottom: 40px;
 }
 
 .infosAbout {
