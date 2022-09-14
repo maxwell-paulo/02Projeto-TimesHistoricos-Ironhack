@@ -4,10 +4,12 @@ import { AddCromo } from "./pages/AddCromo";
 import { InfoCromo } from "./pages/InfoCromo";
 import { EditPage } from "./pages/EditPage";
 import { Navbar } from "./components/Navbar";
+import {Toaster} from "react-hot-toast"
 
 function App() {
   return (
     <div className="App">
+      <Toaster position="top-center" reverseOrder={false}/>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
