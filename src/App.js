@@ -4,8 +4,10 @@ import { AddCromo } from "./pages/AddCromo";
 import { InfoCromo } from "./pages/InfoCromo";
 import { EditPage } from "./pages/EditPage";
 import { Navbar } from "./components/Navbar";
-import { Toaster } from "react-hot-toast";
 import { AboutUs } from "./pages/AboutUs";
+import { Footer } from "./components/Footer";
+import {Toaster} from "react-hot-toast"
+
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
         <Route path="/edit/:id" element={<EditPage />} />
         <Route path="/about-us" element={<AboutUs />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }

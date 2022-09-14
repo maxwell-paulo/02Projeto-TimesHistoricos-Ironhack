@@ -1,6 +1,6 @@
 import style from "./style.module.css";
 import logo from "../../images/logo-historic-soccer-teams.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export function Navbar() {
   return (
