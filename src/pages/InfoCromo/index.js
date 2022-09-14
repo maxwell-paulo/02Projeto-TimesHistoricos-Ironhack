@@ -9,8 +9,8 @@ import { PlayerCard } from "../../components/PlayerCard";
 export function InfoCromo() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [card, setCard] = useState({players: [], titles: []});
-  
+  const [card, setCard] = useState({ players: [], titles: [] });
+
   useEffect(() => {
     async function fetchCard() {
       try {
@@ -18,8 +18,7 @@ export function InfoCromo() {
           `https://ironrest.herokuapp.com/TheBestSoccerTeams/${id}`
         );
 
-        setCard( response.data );
-        
+        setCard(response.data);
       } catch (err) {
         console.log(err);
       }
@@ -28,27 +27,46 @@ export function InfoCromo() {
   }, [id]);
 
   function handleToast() {
-    toast((t) => (
-      <span>
-        Tem certeza que deseja <b>excluir</b> esse cromo?
-        <div className={style.toastBtns}>
-          <button
-            className={style.toastDelBtn}
-            onClick={() => {
-              handleDelete(t);
-            }}
-          >
-            Excluir
-          </button>
-          <button className={style.toastNoBtn} onClick={() => toast.dismiss(t.id)}>Não</button>
-        </div>
-      </span>
-    ));
+    if (card._is_locked === false) {
+      toast((t) => (
+        <span>
+          Tem certeza que deseja <b>excluir</b> esse cromo?
+          <div className={style.toastBtns}>
+            <button
+              className={style.toastDelBtn}
+              onClick={() => {
+                handleDelete(t);
+              }}
+            >
+              Excluir
+            </button>
+            <button
+              className={style.toastNoBtn}
+              onClick={() => toast.dismiss(t.id)}
+            >
+              Não
+            </button>
+          </div>
+        </span>
+      ));
+    } else {
+      toast.error("Esse cromo não é deletável");
+    }
+  }
+
+  function handleEdit() {
+    // if (card._is_locked === false) {
+    navigate(`/edit/${id}`);
+    // }  else {
+    // toast.error("Esse cromo não é editável");
+    // }
   }
 
   async function handleDelete(t) {
     try {
-      await axios.delete(`https://ironrest.herokuapp.com/TheBestSoccerTeams/${id}`);
+      await axios.delete(
+        `https://ironrest.herokuapp.com/TheBestSoccerTeams/${id}`
+      );
 
       toast.dismiss(t.id);
       navigate("/");
@@ -67,6 +85,7 @@ export function InfoCromo() {
           <img src={card.team_logo} alt="Escudo do time" />
           <h1>{card.team}</h1>
         </div>
+
         <div className={style.infosAbout}>
           <h2>Ano: {card.year}</h2>
           <img className={style.teamImg} src={card.team_img} alt='Imagem do time'/>
@@ -76,25 +95,29 @@ export function InfoCromo() {
           <h3>Jogadores Titulares:</h3>
           <ul>
             {card.players.map((currentPlayer) => {
-                      return <>
-                      {/* <PlayerCard year={card.year} team_logo={card.team_logo} player_name={currentPlayer.player_name} position={currentPlayer.position}/> */}
-                      <li>{currentPlayer.player_name} - {currentPlayer.position}</li>
-                      </>
-                  })}
+              return (
+                <>
+                  {/* <PlayerCard year={card.year} team_logo={card.team_logo} player_name={currentPlayer.player_name} position={currentPlayer.position}/> */}
+                  <li>
+                    {currentPlayer.player_name} - {currentPlayer.position}
+                  </li>
+                </>
+              );
+            })}
           </ul>
           <h2>Títulos:</h2>
           <ul>
             {card.titles.map((currentTitle) => {
-                      return <>
-                        <li>{currentTitle.title}</li>
-                      </>
-                  })}
+              return (
+                <>
+                  <li>{currentTitle.title}</li>
+                </>
+              );
+            })}
           </ul>
         </div>
         <div className={style.infoButtons}>
-            <Link to={`/edit/${id}`}>
-              <button className={style.editBtn}></button>
-            </Link>
+            <<button className={style.editBtn} onClick={handleEdit}></button>
             <button className={style.deleteBtn} onClick={handleToast}></button>
         </div>
       </main>
