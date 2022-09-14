@@ -253,25 +253,8 @@ export function EditPage() {
         {form.players.map((current) => {
           return (
             <div>
-              <input
-                id="titulos"
-                name="title"
-                type="text"
-                value={current.player_name}
-                onChange={handleChange}
-              />
-              <select
-                id="posicao"
-                name="position"
-                value={current.position}
-                onChange={handleChange}
-              >
-                <option disabled>Posição</option>
-                <option value="Goleiro">Goleiro</option>
-                <option value="Defensor">Defensor</option>
-                <option value="Meio-campista">Meio-campista</option>
-                <option value="Atacante">Atacante</option>
-              </select>
+              <p>{current.player_name}</p>
+              <p>{current.position}</p>
 
               <button
                 type="button"
