@@ -55,11 +55,11 @@ export function InfoCromo() {
   }
 
   function handleEdit() {
-    // if (card._is_locked === false) {
-    navigate(`/edit/${id}`);
-    // }  else {
-    // toast.error("Esse cromo não é editável");
-    // }
+    if (card._is_locked === false) {
+      navigate(`/edit/${id}`);
+    } else {
+      toast.error("Esse cromo não é editável");
+    }
   }
 
   async function handleDelete(t) {
@@ -88,7 +88,11 @@ export function InfoCromo() {
 
         <div className={style.infosAbout}>
           <h2>Ano: {card.year}</h2>
-          <img className={style.teamImg} src={card.team_img} alt='Imagem do time'/>
+          <img
+            className={style.teamImg}
+            src={card.team_img}
+            alt="Imagem do time"
+          />
           <p>{card.about}</p>
           <h2>Escalação:</h2>
           <h3>Técnico: {card.coach}</h3>
@@ -117,8 +121,8 @@ export function InfoCromo() {
           </ul>
         </div>
         <div className={style.infoButtons}>
-            <<button className={style.editBtn} onClick={handleEdit}></button>
-            <button className={style.deleteBtn} onClick={handleToast}></button>
+          <button className={style.editBtn} onClick={handleEdit}></button>
+          <button className={style.deleteBtn} onClick={handleToast}></button>
         </div>
       </main>
     </div>
