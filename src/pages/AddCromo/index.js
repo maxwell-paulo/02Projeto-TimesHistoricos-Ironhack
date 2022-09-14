@@ -80,6 +80,20 @@ export function AddCromo() {
     }
   }
 
+  function handleTitleDelete(titulo) {
+    let newTitles = form.titles.filter((current) => {
+      return current !== titulo;
+    });
+    setForm({ ...form, titles: [...newTitles] });
+  }
+
+  function handlePlayerDelete(jogador) {
+    let newPlayers = form.players.filter((current) => {
+      return current !== jogador;
+    });
+    setForm({ ...form, players: [...newPlayers] });
+  }
+
   return (
     <>
       <h1>Cole uma figurinha</h1>
@@ -141,7 +155,15 @@ export function AddCromo() {
           {form.titles.map((current) => {
             return (
               <p>
-                {current.title} <button type="button">Deletar</button>
+                {current.title}{" "}
+                <button
+                  onClick={() => {
+                    handleTitleDelete(current);
+                  }}
+                  type="button"
+                >
+                  Deletar
+                </button>
               </p>
             );
           })}
@@ -207,7 +229,14 @@ export function AddCromo() {
             return (
               <p>
                 {current.player_name} {current.position}{" "}
-                <button type="button">Deletar</button>
+                <button
+                  onClick={() => {
+                    handlePlayerDelete(current);
+                  }}
+                  type="button"
+                >
+                  Deletar
+                </button>
               </p>
             );
           })}
