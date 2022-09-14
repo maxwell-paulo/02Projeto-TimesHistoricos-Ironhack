@@ -2,6 +2,7 @@ import style from "./style.module.css";
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import toast from "react-hot-toast";
 import logo from "../../images/logo-historic-soccer-teams.png";
 import { PlayerCard } from "../../components/PlayerCard";
 
@@ -26,11 +27,41 @@ export function InfoCromo() {
     fetchCard();
   }, [id]);
 
+  function handleToast() {
+    toast((t) => (
+      <span>
+        Tem certeza que deseja <b>excluir</b> esse cromo?
+        <div className={style.toastBtns}>
+          <button
+            className={style.toastDelBtn}
+            onClick={() => {
+              handleDelete(t);
+            }}
+          >
+            Excluir
+          </button>
+          <button className={style.toastNoBtn} onClick={() => toast.dismiss(t.id)}>Não</button>
+        </div>
+      </span>
+    ));
+  }
+
+  async function handleDelete(t) {
+    try {
+      await axios.delete(`https://ironrest.herokuapp.com/TheBestSoccerTeams/${id}`);
+
+      toast.dismiss(t.id);
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   return (
     <div className={style.infoPage}>
-      <header className={style.infoHeader}>
+      {/* <header className={style.infoHeader}>
         <img className={style.logo} src={logo} alt="logo" />
-      </header>
+      </header> */}
       <main className={style.infos}>
         <div className={style.infosTitle}>
           <img src={card.team_logo} alt="Escudo do time" />
@@ -40,7 +71,7 @@ export function InfoCromo() {
             <Link to={`/edit/${id}`}>
               <button className={style.editBtn}></button>
             </Link>
-            <button className={style.deleteBtn}></button>
+            <button className={style.deleteBtn} onClick={handleToast}></button>
         </div>
         <div className={style.infosAbout}>
           <img className={style.teamImg} src={card.team_img} alt='Imagem do time'/>
@@ -52,8 +83,8 @@ export function InfoCromo() {
           <ul>
             {card.players.map((currentPlayer) => {
                       return <>
-                      {/* <PlayerCard year={card.year} team_logo={card.team_logo} player_name={currentPlayer.player_name} position={currentPlayer.position}/>
-                      <li>{currentPlayer.player_name} - {currentPlayer.position}</li> */}
+                      {/* <PlayerCard year={card.year} team_logo={card.team_logo} player_name={currentPlayer.player_name} position={currentPlayer.position}/> */}
+                      <li>{currentPlayer.player_name} - {currentPlayer.position}</li>
                       </>
                   })}
           </ul>

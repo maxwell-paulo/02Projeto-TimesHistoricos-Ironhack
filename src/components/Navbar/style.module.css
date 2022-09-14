@@ -1,7 +1,17 @@
 .container {
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav {
+  max-width: 850px;
+  width: 90vw;
   display: flex;
   justify-content: space-between;
-  background-color: white;
+  align-items: center;
   padding: 20px;
 }
 
