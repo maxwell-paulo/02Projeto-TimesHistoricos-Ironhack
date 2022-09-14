@@ -1,0 +1,59 @@
+* {
+    margin: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+}
+
+.goldBg {
+    background-image: url("../../images/shiny-yellow-leaf-gold-foil-texture_38679-1070.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.card {
+  background-image: url("../../images/team-card-layout-noBg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 260px;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 5px 5px 10px rgb(0, 0, 0);
+}
+
+.teamLogo {
+    width: 200px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.teamLogo img {
+  height: 80px;
+  margin-top: 75px;
+}
+
+.cardNames {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cardNames h1 {
+    font-size: 1em;
+    color: rgb(0, 0, 0);
+    margin-bottom: 0px;
+}
+
+.cardNames h2 {
+    font-size: 0.8em;
+    color: white;
+    margin-bottom: 16px;
+    text-decoration: none;
+}
