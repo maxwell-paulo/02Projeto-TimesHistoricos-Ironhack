@@ -20,6 +20,9 @@ export function EditPage() {
     _is_locked: false,
   });
 
+  const [title, setTitle] = useState({
+    titles: [],
+  });
   useEffect(() => {
     async function fetchCromo() {
       try {
@@ -28,17 +31,21 @@ export function EditPage() {
         );
         delete response.data._id;
         setForm({ ...response.data });
+        setTitle({ titles: [...response.data.titles] });
       } catch (err) {
         console.log(err);
       }
     }
     fetchCromo();
-  }, []);
+    console.log(title);
+  }, [id]);
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
     console.log(form);
   }
+
+  function handleChangeTitle(e) {}
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -106,21 +113,20 @@ export function EditPage() {
           value={form.about}
           onChange={handleChange}
         />
-        {
-          <div>
-            {form.titles.map((current) => {
-              return <p>{current.title}</p>;
-            })}
-          </div>
-        }
+
         <label htmlFor="titulos">Títulos:</label>
-        <input
-          id="titulos"
-          name="title"
-          type="text"
-          value={form.titles.title}
-          onChange={handleChange}
-        />
+
+        {form.titles.map((current) => {
+          return (
+            <input
+              id="titulos"
+              name="title"
+              type="text"
+              value={current.title}
+              onChange={handleChangeTitle}
+            />
+          );
+        })}
 
         <h2>Equipe:</h2>
 
@@ -132,9 +138,7 @@ export function EditPage() {
           value={form.formation}
           onChange={handleChange}
         >
-          <option hidden defaultValue>
-            Esquema Tático
-          </option>
+          <option disabled>Esquema Tático</option>
           <option value="4-3-3">4-3-3</option>
           <option value="4-4-2">4-4-2</option>
           <option value="3-5-2">3-5-2</option>
@@ -154,31 +158,35 @@ export function EditPage() {
           value={form.coach}
           onChange={handleChange}
         />
+        <p>Jogadores Titulares</p>
+        <label htmlFor="jogadores">Jogador</label>
+        <label htmlFor="posicao">Posição</label>
 
-        <label htmlFor="jogadores">Jogadores Titulares</label>
-        <input
-          id="jogadores"
-          name="player_name"
-          type="text"
-          value={form.players.player_name}
-          onChange={handleChange}
-        />
-
-        <label htmlFor="posicao">Jogadores Titulares</label>
-        <select
-          id="posicao"
-          name="position"
-          value={form.players.position}
-          onChange={handleChange}
-        >
-          <option hidden defaultValue>
-            Posição
-          </option>
-          <option value="Goleiro">Goleiro</option>
-          <option value="Defensor">Defensor</option>
-          <option value="Meio-campista">Meio-campista</option>
-          <option value="Atacante">Atacante</option>
-        </select>
+        {form.players.map((current) => {
+          return (
+            <div>
+              <input
+                id="titulos"
+                name="title"
+                type="text"
+                value={current.player_name}
+                onChange={handleChange}
+              />
+              <select
+                id="posicao"
+                name="position"
+                value={current.position}
+                onChange={handleChange}
+              >
+                <option disabled>Posição</option>
+                <option value="Goleiro">Goleiro</option>
+                <option value="Defensor">Defensor</option>
+                <option value="Meio-campista">Meio-campista</option>
+                <option value="Atacante">Atacante</option>
+              </select>
+            </div>
+          );
+        })}
 
         <div>Os jogadores e as posições devem aparecer aqui</div>
 

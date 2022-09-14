@@ -139,7 +139,7 @@ export function AddCromo() {
           value={form.about}
           onChange={handleChange}
         />
-        <label htmlFor="titulos">Títulos:</label>
+        <label htmlFor="titulos">Títulos</label>
         <input
           id="titulos"
           name="title"
@@ -180,6 +180,7 @@ export function AddCromo() {
           <option hidden defaultValue>
             Esquema Tático
           </option>
+          <option disabled>Esquema Tático</option>
           <option value="4-3-3">4-3-3</option>
           <option value="4-4-2">4-4-2</option>
           <option value="3-5-2">3-5-2</option>
@@ -198,7 +199,8 @@ export function AddCromo() {
           value={form.coach}
           onChange={handleChange}
         />
-        <label htmlFor="jogadores">Jogadores Titulares</label>
+        <p>Jogadores titulares</p>
+        <label htmlFor="jogadores">Jogador</label>
         <input
           id="jogadores"
           name="player_name"
@@ -206,7 +208,7 @@ export function AddCromo() {
           value={players.player_name}
           onChange={playerHandleChange}
         />
-        <label htmlFor="posicao">Jogadores Titulares</label>
+        <label htmlFor="posicao">Posição</label>
         <select
           id="posicao"
           name="position"
@@ -216,6 +218,7 @@ export function AddCromo() {
           <option hidden defaultValue>
             Posição
           </option>
+          <option disabled>Posição</option>
           <option value="Goleiro">Goleiro</option>
           <option value="Defensor">Defensor</option>
           <option value="Meio-campista">Meio-campista</option>
