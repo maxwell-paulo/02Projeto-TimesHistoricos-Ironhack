@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 20px;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+}
+
+.img {
+  width: 40px;
+}

@@ -35,45 +35,6 @@ export function EditPage() {
     fetchCromo();
   }, []);
 
-  const [titles, setTitles] = useState({
-    title: "",
-  });
-
-  const [players, setPlayers] = useState({
-    player_name: "",
-    position: "",
-  });
-
-  function titleHandleChange(e) {
-    setTitles({ ...titles, [e.target.name]: e.target.value });
-    console.log(titles);
-  }
-
-  function handleAddTitle(e) {
-    e.preventDefault();
-
-    setForm({
-      ...form,
-      titles: [...form.titles, titles],
-    });
-    console.log(titles);
-  }
-
-  function playerHandleChange(e) {
-    setPlayers({ ...players, [e.target.name]: e.target.value });
-    console.log(players);
-  }
-
-  function handleAddPlayer(e) {
-    e.preventDefault();
-
-    setForm({
-      ...form,
-      players: [...form.players, players],
-    });
-    console.log(form);
-  }
-
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
     console.log(form);
@@ -145,20 +106,21 @@ export function EditPage() {
           value={form.about}
           onChange={handleChange}
         />
-
+        {
+          <div>
+            {form.titles.map((current) => {
+              return <p>{current.title}</p>;
+            })}
+          </div>
+        }
         <label htmlFor="titulos">Títulos:</label>
         <input
           id="titulos"
           name="title"
           type="text"
-          value={titles.title}
-          onChange={titleHandleChange}
+          value={form.titles.title}
+          onChange={handleChange}
         />
-        <button type="button" onClick={handleAddTitle}>
-          Adicionar
-        </button>
-
-        <div>Os titulos devem aparecer aqui</div>
 
         <h2>Equipe:</h2>
 
@@ -198,16 +160,16 @@ export function EditPage() {
           id="jogadores"
           name="player_name"
           type="text"
-          value={players.player_name}
-          onChange={playerHandleChange}
+          value={form.players.player_name}
+          onChange={handleChange}
         />
 
         <label htmlFor="posicao">Jogadores Titulares</label>
         <select
           id="posicao"
           name="position"
-          value={players.position}
-          onChange={playerHandleChange}
+          value={form.players.position}
+          onChange={handleChange}
         >
           <option hidden defaultValue>
             Posição
@@ -217,9 +179,6 @@ export function EditPage() {
           <option value="Meio-campista">Meio-campista</option>
           <option value="Atacante">Atacante</option>
         </select>
-        <button type="button" onClick={handleAddPlayer}>
-          Adicionar
-        </button>
 
         <div>Os jogadores e as posições devem aparecer aqui</div>
 

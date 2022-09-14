@@ -155,7 +155,7 @@ export function AddCromo() {
           {form.titles.map((current) => {
             return (
               <p>
-                {current.title}{" "}
+                {current.title}
                 <button
                   onClick={() => {
                     handleTitleDelete(current);
@@ -228,7 +228,7 @@ export function AddCromo() {
           {form.players.map((current) => {
             return (
               <p>
-                {current.player_name} {current.position}{" "}
+                {current.player_name} {current.position}
                 <button
                   onClick={() => {
                     handlePlayerDelete(current);
