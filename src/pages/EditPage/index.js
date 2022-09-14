@@ -27,7 +27,6 @@ export function EditPage() {
           `https://ironrest.herokuapp.com/TheBestSoccerTeams/${id}`
         );
         delete response.data._id;
-
         setForm({ ...response.data });
       } catch (err) {
         console.log(err);

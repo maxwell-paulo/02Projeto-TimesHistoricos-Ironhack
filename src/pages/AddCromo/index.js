@@ -93,7 +93,6 @@ export function AddCromo() {
           value={form.team}
           onChange={handleChange}
         />
-
         <label htmlFor="ano">Ano</label>
         <input
           id="ano"
@@ -102,7 +101,6 @@ export function AddCromo() {
           value={form.year}
           onChange={handleChange}
         />
-
         <label htmlFor="logo">Imagem do escudo do time - url</label>
         <input
           id="logo"
@@ -111,7 +109,6 @@ export function AddCromo() {
           value={form.team_logo}
           onChange={handleChange}
         />
-
         <label htmlFor="imagem">Imagem do time (jogadores) - url</label>
         <input
           id="imagem"
@@ -120,7 +117,6 @@ export function AddCromo() {
           value={form.team_img}
           onChange={handleChange}
         />
-
         <label htmlFor="sobre">Grandes feitos</label>
         <input
           id="sobre"
@@ -129,7 +125,6 @@ export function AddCromo() {
           value={form.about}
           onChange={handleChange}
         />
-
         <label htmlFor="titulos">Títulos:</label>
         <input
           id="titulos"
@@ -142,10 +137,16 @@ export function AddCromo() {
           Adicionar
         </button>
 
-        <div>Os titulos devem aparecer aqui</div>
-
+        <div>
+          {form.titles.map((current) => {
+            return (
+              <p>
+                {current.title} <button type="button">Deletar</button>
+              </p>
+            );
+          })}
+        </div>
         <h2>Equipe:</h2>
-
         <label htmlFor="formacao">Esquema tático</label>
         <select
           id="formacao"
@@ -167,7 +168,6 @@ export function AddCromo() {
           <option value="4-1-4-1">4-1-4-1</option>
           <option value="4-1-3-2">4-1-3-2</option>
         </select>
-
         <label htmlFor="tecnico">Técnico</label>
         <input
           id="tecnico"
@@ -176,7 +176,6 @@ export function AddCromo() {
           value={form.coach}
           onChange={handleChange}
         />
-
         <label htmlFor="jogadores">Jogadores Titulares</label>
         <input
           id="jogadores"
@@ -185,7 +184,6 @@ export function AddCromo() {
           value={players.player_name}
           onChange={playerHandleChange}
         />
-
         <label htmlFor="posicao">Jogadores Titulares</label>
         <select
           id="posicao"
@@ -204,9 +202,16 @@ export function AddCromo() {
         <button type="button" onClick={handleAddPlayer}>
           Adicionar
         </button>
-
-        <div>Os jogadores e as posições devem aparecer aqui</div>
-
+        <div>
+          {form.players.map((current) => {
+            return (
+              <p>
+                {current.player_name} {current.position}{" "}
+                <button type="button">Deletar</button>
+              </p>
+            );
+          })}
+        </div>
         <button type="submit">COLAR!</button>
       </form>
     </>
