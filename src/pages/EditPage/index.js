@@ -21,23 +21,63 @@ export function EditPage() {
   });
 
   useEffect(() => {
-    async function fetchTip() {
+    async function fetchCromo() {
       try {
         const response = await axios.get(
-          `https://ironrest.herokuapp.com/irontips/${id}`
+          `https://ironrest.herokuapp.com/TheBestSoccerTeams/${id}`
         );
-
         delete response.data._id;
+
         setForm({ ...response.data });
       } catch (err) {
         console.log(err);
       }
     }
-    fetchTip();
+    fetchCromo();
   }, []);
+
+  const [titles, setTitles] = useState({
+    title: "",
+  });
+
+  const [players, setPlayers] = useState({
+    player_name: "",
+    position: "",
+  });
+
+  function titleHandleChange(e) {
+    setTitles({ ...titles, [e.target.name]: e.target.value });
+    console.log(titles);
+  }
+
+  function handleAddTitle(e) {
+    e.preventDefault();
+
+    setForm({
+      ...form,
+      titles: [...form.titles, titles],
+    });
+    console.log(titles);
+  }
+
+  function playerHandleChange(e) {
+    setPlayers({ ...players, [e.target.name]: e.target.value });
+    console.log(players);
+  }
+
+  function handleAddPlayer(e) {
+    e.preventDefault();
+
+    setForm({
+      ...form,
+      players: [...form.players, players],
+    });
+    console.log(form);
+  }
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
+    console.log(form);
   }
 
   async function handleSubmit(e) {
@@ -45,7 +85,7 @@ export function EditPage() {
 
     try {
       const response = await axios.put(
-        `https://ironrest.herokuapp.com/irontips/${id}`,
+        `https://ironrest.herokuapp.com/TheBestSoccerTeams/${id}`,
         form
       );
 
@@ -107,7 +147,7 @@ export function EditPage() {
           onChange={handleChange}
         />
 
-        {/* <label htmlFor="titulos">Títulos:</label>
+        <label htmlFor="titulos">Títulos:</label>
         <input
           id="titulos"
           name="title"
@@ -117,7 +157,7 @@ export function EditPage() {
         />
         <button type="button" onClick={handleAddTitle}>
           Adicionar
-        </button> */}
+        </button>
 
         <div>Os titulos devem aparecer aqui</div>
 
@@ -154,16 +194,16 @@ export function EditPage() {
           onChange={handleChange}
         />
 
-        {/* <label htmlFor="jogadores">Jogadores Titulares</label>
+        <label htmlFor="jogadores">Jogadores Titulares</label>
         <input
           id="jogadores"
           name="player_name"
           type="text"
           value={players.player_name}
           onChange={playerHandleChange}
-        /> */}
+        />
 
-        {/* <label htmlFor="posicao">Jogadores Titulares</label>
+        <label htmlFor="posicao">Jogadores Titulares</label>
         <select
           id="posicao"
           name="position"
@@ -180,7 +220,7 @@ export function EditPage() {
         </select>
         <button type="button" onClick={handleAddPlayer}>
           Adicionar
-        </button> */}
+        </button>
 
         <div>Os jogadores e as posições devem aparecer aqui</div>
 
