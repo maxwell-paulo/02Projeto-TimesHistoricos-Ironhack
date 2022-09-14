@@ -3,10 +3,12 @@ import { Home } from "./pages/Home";
 import { AddCromo } from "./pages/AddCromo";
 import { InfoCromo } from "./pages/InfoCromo";
 import { EditPage } from "./pages/EditPage";
+import { Navbar } from "./components/Navbar";
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/add-cromo" element={<AddCromo />} />
