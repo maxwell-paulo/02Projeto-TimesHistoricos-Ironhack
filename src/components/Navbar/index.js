@@ -6,11 +6,11 @@ export function Navbar() {
   return (
     <div className={style.container}>
       <div className={style.nav}>
-        <Link to={`/`}>
+        <Link to={"/home"}>
           <img src={logo} alt="siteLogo" className={style.img} />
         </Link>
         <div className={style.links}>
-          <Link to={`/`}>
+          <Link to={"/home"}>
             <p>Home</p>
           </Link>
           <Link to={`/add-cromo`}>

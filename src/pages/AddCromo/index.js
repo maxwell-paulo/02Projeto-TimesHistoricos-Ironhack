@@ -72,7 +72,7 @@ export function AddCromo() {
         form
       );
 
-      navigate("/");
+      navigate("/home");
 
       console.log(response);
     } catch (err) {

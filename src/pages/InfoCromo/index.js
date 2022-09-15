@@ -69,7 +69,7 @@ export function InfoCromo() {
       );
 
       toast.dismiss(t.id);
-      navigate("/");
+      navigate("/home");
     } catch (err) {
       console.log(err);
     }
