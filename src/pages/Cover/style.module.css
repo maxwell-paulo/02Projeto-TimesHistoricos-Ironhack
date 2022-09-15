@@ -7,3 +7,13 @@
   bottom: 0px;
   left: 0px;
 }
+
+.img {
+  width: 300px;
+}
+
+.imgDiv {
+  margin-top: 300px;
+  display: flex;
+  justify-content: center;
+}

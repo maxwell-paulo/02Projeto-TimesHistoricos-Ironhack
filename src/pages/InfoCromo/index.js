@@ -1,9 +1,8 @@
 import style from "./style.module.css";
 import { useState, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
-import logo from "../../images/logo-historic-soccer-teams.png";
 import { PlayerCard } from "../../components/PlayerCard";
 
 export function InfoCromo() {
@@ -96,19 +95,6 @@ export function InfoCromo() {
           <p>{card.about}</p>
           <h2>Escalação:</h2>
           <h3>Técnico: {card.coach}</h3>
-          <h3>Jogadores Titulares:</h3>
-          <ul>
-            {card.players.map((currentPlayer) => {
-              return (
-                <>
-                  {/* <PlayerCard year={card.year} team_logo={card.team_logo} player_name={currentPlayer.player_name} position={currentPlayer.position}/> */}
-                  <li>
-                    {currentPlayer.player_name} - {currentPlayer.position}
-                  </li>
-                </>
-              );
-            })}
-          </ul>
           <h2>Títulos:</h2>
           <ul>
             {card.titles.map((currentTitle) => {
@@ -119,6 +105,10 @@ export function InfoCromo() {
               );
             })}
           </ul>
+
+          <h3>Jogadores Titulares:</h3>
+
+          <PlayerCard />
         </div>
         <div className={style.infoButtons}>
           <button className={style.editBtn} onClick={handleEdit}></button>
