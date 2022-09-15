@@ -10,6 +10,7 @@ export function Navbar() {
         <Link to={"/home"}>
           <img src={logo} alt="siteLogo" className={style.img} />
         </Link>
+        <SearchBar />
         <div className={style.links}>
           <Link to={"/home"}>
             <p>Home</p>
@@ -21,7 +22,7 @@ export function Navbar() {
             <p>Sobre</p>
           </Link>
         </div>
-        <SearchBar />
+        
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 .infoPage {
+    margin-top: 70px;
     height: 100%;
     background-image: url("../../images/background-gea37234bd_12802.jpg");
     background-size: cover;
@@ -116,8 +117,7 @@
 }
 
 .infosAbout {
-    width: 80vw;
-    max-width: 800px;
+    width: 95%;
     display: flex;
     align-items: flex-start;
     justify-content: center;
