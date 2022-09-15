@@ -9,8 +9,8 @@ O objetivo do projeto é criar um banco dados que pode ser atualizado e editado 
 Esse banco de dados armazena informações sobre os maiores times do futebol brasileiro.
 Se não encontrou o seu esquadrão favorito, sinta-se à vontade para adicioná-lo.
 
-Para visitar o site: [Clique aqui](https://bestsoccerteams.netlify.app/home)
-para saber mais, [veja essa apresentação](www.google.com)
+<p>Para visitar o site: [Clique aqui](https://bestsoccerteams.netlify.app/home)</p>
+<p>para saber mais, [veja essa apresentação](www.google.com)</p>
 
 ## Criadores
 
