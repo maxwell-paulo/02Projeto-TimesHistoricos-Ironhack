@@ -122,7 +122,7 @@ export function AddCromo() {
                 onChange={handleChange}
                 required
                 min="1900"
-                max="2022"
+                max="9999"
               />
             </div>
           </div>
