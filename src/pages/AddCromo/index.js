@@ -9,7 +9,7 @@ export function AddCromo() {
 
   const [form, setForm] = useState({
     team: "",
-    year: 0,
+    year: 1900,
     team_logo: "",
     team_img: "",
     titles: [],
@@ -108,6 +108,7 @@ export function AddCromo() {
                 type="text"
                 value={form.team}
                 onChange={handleChange}
+                required
               />
             </div>
             <div className={style.formAno}>
@@ -119,6 +120,9 @@ export function AddCromo() {
                 type="number"
                 value={form.year}
                 onChange={handleChange}
+                required
+                min="1900"
+                max="9999"
               />
             </div>
           </div>
@@ -132,6 +136,7 @@ export function AddCromo() {
                 type="text"
                 value={form.team_logo}
                 onChange={handleChange}
+                required
                 placeholder="http://www.exemplo.com/img.png"
               />
             </div>
@@ -144,6 +149,7 @@ export function AddCromo() {
                 type="text"
                 value={form.team_img}
                 onChange={handleChange}
+                required
                 placeholder="http://www.exemplo.com/img.png"
               />
             </div>
@@ -156,6 +162,7 @@ export function AddCromo() {
             type="text"
             value={form.about}
             onChange={handleChange}
+            required
             placeholder="Descrição dos grandes feitos deste time."
           />
           <div className={style.formTitulos}>
@@ -207,6 +214,7 @@ export function AddCromo() {
                 type="text"
                 value={form.coach}
                 onChange={handleChange}
+                required
               />
             </div>
             <div className={style.formEsqTatico}>
@@ -218,6 +226,7 @@ export function AddCromo() {
                 type="text"
                 value={form.formation}
                 onChange={handleChange}
+                required
               >
                 <option hidden defaultValue>
                   Selecione
@@ -246,6 +255,7 @@ export function AddCromo() {
                 value={players.player_name}
                 onChange={playerHandleChange}
                 placeholder="Nome do jogador"
+                required
               />
               <select
                 className={style.inputs}
@@ -254,7 +264,9 @@ export function AddCromo() {
                 value={players.position}
                 onChange={playerHandleChange}
               >
-                <option hidden defaultValue>Posição</option>
+                <option hidden defaultValue>
+                  Posição
+                </option>
                 <option disabled>Posição</option>
                 <option value="Goleiro">Goleiro</option>
                 <option value="Defensor">Defensor</option>
@@ -265,6 +277,8 @@ export function AddCromo() {
                 className={style.AddBtn}
                 type="button"
                 onClick={handleAddPlayer}
+                required
+
               >
                 Adicionar
               </button>
