@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import style from "./style.module.css"
+import style from "./style.module.css";
 
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -184,7 +184,11 @@ export function EditPage() {
                 value={titles.title}
                 onChange={handleChangeTitle}
               />
-              <button className={style.AddBtn} type="button" onClick={handleAddTitle}>
+              <button
+                className={style.AddBtn}
+                type="button"
+                onClick={handleAddTitle}
+              >
                 Adicionar
               </button>
             </div>
@@ -194,13 +198,13 @@ export function EditPage() {
                   <div className={style.timeTitulo}>
                     <p>{current.title}</p>
                     <button
-                        className={style.delBtn}
-                        onClick={() => {
-                          handleDeleteTitle(current);
-                        }}
-                        type="button"
-                        >
-                        X
+                      className={style.delBtn}
+                      onClick={() => {
+                        handleDeleteTitle(current);
+                      }}
+                      type="button"
+                    >
+                      X
                     </button>
                   </div>
                 );
@@ -265,14 +269,20 @@ export function EditPage() {
                 value={players.position}
                 onChange={handleChangePlayer}
               >
-                <option hidden defaultValue>Posição</option>
+                <option hidden defaultValue>
+                  Posição
+                </option>
                 <option disabled>Posição</option>
                 <option value="Goleiro">Goleiro</option>
                 <option value="Defensor">Defensor</option>
                 <option value="Meio-campista">Meio-campista</option>
                 <option value="Atacante">Atacante</option>
               </select>
-              <button className={style.AddBtn} type="button"    onClick={handleAddPlayer}>
+              <button
+                className={style.AddBtn}
+                type="button"
+                onClick={handleAddPlayer}
+              >
                 Adicionar
               </button>
             </div>
@@ -298,8 +308,12 @@ export function EditPage() {
             </div>
           </div>
           <div className={style.atuaCancelarBtns}>
-            <button className={style.atualizarBtn} type="submit">Atualizar</button>
-            <button className={style.cancelarBtn} type="submit" navigate="/">Cancelar</button>
+            <button className={style.atualizarBtn} type="submit">
+              Atualizar
+            </button>
+            <button className={style.cancelarBtn} type="submit" navigate="/">
+              Cancelar
+            </button>
           </div>
         </form>
       </section>
