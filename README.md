@@ -11,7 +11,7 @@ Se não encontrou o seu esquadrão favorito, sinta-se à vontade para adicioná-
 
 Para visitar o site: [Clique aqui](https://bestsoccerteams.netlify.app/home)
 
-para saber mais, [veja essa apresentação](www.google.com)
+para saber mais, [veja essa apresentação](https://prezi.com/view/M1gTf4VuvmzQ4bfBxZx0/)
 
 ## Criadores
 
