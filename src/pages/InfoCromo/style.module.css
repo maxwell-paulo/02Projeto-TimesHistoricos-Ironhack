@@ -1,5 +1,4 @@
 .infoPage {
-    margin-top: 70px;
     height: 100%;
     background-image: url("../../images/background-gea37234bd_12802.jpg");
     background-size: cover;
@@ -99,6 +98,7 @@
     color: white;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .toastNoBtn {
@@ -109,6 +109,7 @@
     color: white;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .teamImg {

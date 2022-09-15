@@ -93,8 +93,6 @@ export function InfoCromo() {
             alt="Imagem do time"
           />
           <p>{card.about}</p>
-          <h2>Escalação:</h2>
-          <h3>Técnico: {card.coach}</h3>
           <h2>Títulos:</h2>
           <ul>
             {card.titles.map((currentTitle) => {
@@ -105,9 +103,10 @@ export function InfoCromo() {
               );
             })}
           </ul>
-
+          <h2>Escalação:</h2>
+          <h3>Técnico: {card.coach}</h3>
+          <h3>Formação: {card.formation}</h3>
           <h3>Jogadores Titulares:</h3>
-
           <PlayerCard />
         </div>
         <div className={style.infoButtons}>
