@@ -1,37 +1,36 @@
 .headerHome {
-    background-image: url("../../images/headerBg.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-attachment: local;
-    height: 400px;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 5px 15px rgb(0, 0, 0);
-    position: absolute;
+  background-image: url("../../images/headerBg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: local;
+  height: 400px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 5px 15px rgb(0, 0, 0);
+  position: absolute;
 }
 
 .headerHome img {
-    width: 250px;
+  width: 250px;
 }
 
-
 .cards {
-    padding: 480px 30px 50px 30px;
-    gap: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-image: url("../../images/background-gea37234bd_12802.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+  padding: 480px 30px 50px 30px;
+  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-image: url("../../images/background-gea37234bd_12802.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .addBtn {
-    width: 200px;
-    height: 260px;
+  width: 200px;
+  height: 260px;
 }

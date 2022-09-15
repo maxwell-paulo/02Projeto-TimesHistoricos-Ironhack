@@ -86,7 +86,7 @@ export function EditPage() {
         form
       );
 
-      navigate("/");
+      navigate("/home");
 
       console.log(response);
     } catch (err) {
