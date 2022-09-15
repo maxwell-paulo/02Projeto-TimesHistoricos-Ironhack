@@ -1,6 +1,6 @@
 # BEST SOCCER TEAMS
 
-<img src="./src/images/logo-historic-soccer-teams.png" alt="site logo" width="80%"/>
+<img src="./src/images/logo-historic-soccer-teams.png" alt="site logo" width="50%"/>
 
 Projeto realizando durante o bootcamp de Web Development da Ironhack.
 Utilizamos conhecimentos obtidos nas 5 primeiras semanas do bootcamp.
