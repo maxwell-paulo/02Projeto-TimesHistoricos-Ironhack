@@ -1,6 +1,7 @@
 import style from "./style.module.css";
 import logo from "../../images/logo-historic-soccer-teams.png";
 import { Link } from "react-router-dom";
+import { SearchBar } from "../Searchbar";
 
 export function Navbar() {
   return (
@@ -20,6 +21,7 @@ export function Navbar() {
             <p>Sobre</p>
           </Link>
         </div>
+        <SearchBar />
       </div>
     </div>
   );
