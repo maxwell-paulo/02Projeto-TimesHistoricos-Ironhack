@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import style from "./style.module.css"
+import style from "./style.module.css";
 
 import { useNavigate } from "react-router-dom";
 
@@ -41,7 +41,6 @@ export function AddCromo() {
       ...form,
       titles: [...form.titles, titles],
     });
-    console.log(titles);
   }
 
   function playerHandleChange(e) {
@@ -56,7 +55,6 @@ export function AddCromo() {
       ...form,
       players: [...form.players, players],
     });
-    console.log(form);
   }
 
   function handleChange(e) {
@@ -171,7 +169,11 @@ export function AddCromo() {
                 value={titles.title}
                 onChange={titleHandleChange}
               />
-              <button className={style.AddBtn} type="button" onClick={handleAddTitle}>
+              <button
+                className={style.AddBtn}
+                type="button"
+                onClick={handleAddTitle}
+              >
                 Adicionar
               </button>
             </div>
@@ -181,13 +183,13 @@ export function AddCromo() {
                   <div className={style.timeTitulo}>
                     <p>{current.title}</p>
                     <button
-                        className={style.delBtn}
-                        onClick={() => {
-                          handleTitleDelete(current);
-                        }}
-                        type="button"
-                        >
-                        X
+                      className={style.delBtn}
+                      onClick={() => {
+                        handleTitleDelete(current);
+                      }}
+                      type="button"
+                    >
+                      X
                     </button>
                   </div>
                 );
@@ -261,7 +263,11 @@ export function AddCromo() {
                 <option value="Meio-campista">Meio-campista</option>
                 <option value="Atacante">Atacante</option>
               </select>
-              <button className={style.AddBtn} type="button"    onClick={handleAddPlayer}>
+              <button
+                className={style.AddBtn}
+                type="button"
+                onClick={handleAddPlayer}
+              >
                 Adicionar
               </button>
             </div>
@@ -286,7 +292,9 @@ export function AddCromo() {
               })}
             </div>
           </div>
-          <button className={style.colarBtn} type="submit">COLAR!</button>
+          <button className={style.colarBtn} type="submit">
+            COLAR!
+          </button>
         </form>
       </section>
     </main>
