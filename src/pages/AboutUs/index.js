@@ -45,6 +45,8 @@ export function AboutUs() {
                 classname={style.linkStyle}
                 style={{ textDecoration: "none", color: "#965083" }}
                 href="https://github.com/IgorALopes/02Projeto-TimesHistoricos-Ironhack"
+                target="_blank"
+                rel="noreferrer"
               >
                 Clique aqui
               </a>
@@ -57,12 +59,20 @@ export function AboutUs() {
               <h3>Igor Lopes</h3>
               <img className={style.ourCromo} src={igor} alt="max-cromo" />
               <div className={style.ourLinks}>
-                <a href="https://github.com/IgorALopes">
+                <a
+                  href="https://github.com/IgorALopes"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <button className={style.btn}>
                     <img className={style.img} src={github} alt="giticon" />
                   </button>
                 </a>
-                <a href="https://www.linkedin.com/in/igor-lopes-83232ba9/">
+                <a
+                  href="https://www.linkedin.com/in/igor-lopes-83232ba9/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <button className={style.btn}>
                     <img
                       className={style.img}
@@ -78,12 +88,20 @@ export function AboutUs() {
               <img className={style.ourCromo} src={max} alt="max-cromo" />
 
               <div className={style.ourLinks}>
-                <a href="https://github.com/maxwell-paulo">
+                <a
+                  href="https://github.com/maxwell-paulo"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <button className={style.btn}>
                     <img className={style.img} src={github} alt="giticon" />
                   </button>
                 </a>
-                <a href="https://www.linkedin.com/in/-maxpaulo/">
+                <a
+                  href="https://www.linkedin.com/in/-maxpaulo/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <button className={style.btn}>
                     <img
                       className={style.img}

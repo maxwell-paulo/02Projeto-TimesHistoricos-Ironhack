@@ -96,7 +96,7 @@ export function AddCromo() {
   return (
     <main className={style.addCromoPage}>
       <section className={style.formSection}>
-        <h1>Cole uma figurinha</h1>
+        <h1>Colar cromo</h1>
         <form className={style.form} onSubmit={handleSubmit}>
           <div className={style.formTimeAno}>
             <div className={style.formTime}>
@@ -254,9 +254,7 @@ export function AddCromo() {
                 value={players.position}
                 onChange={playerHandleChange}
               >
-                <option hidden defaultValue>
-                  Posição
-                </option>
+                <option hidden defaultValue>Posição</option>
                 <option disabled>Posição</option>
                 <option value="Goleiro">Goleiro</option>
                 <option value="Defensor">Defensor</option>
