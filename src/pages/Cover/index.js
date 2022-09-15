@@ -7,7 +7,9 @@ export function Cover() {
     <>
       <Link to={"/home"}>
         <div className={style.container}>
-          <img src={logo} alt="siteLogo" className={style.img} />
+          <div className={style.imgDiv}>
+            <img src={logo} alt="siteLogo" className={style.img} />
+          </div>
         </div>
       </Link>
     </>
