@@ -7,7 +7,7 @@ Utilizamos conhecimentos obtidos nas 5 primeiras semanas do bootcamp.
 Fizemos o uso de bibliotecas como React.js e React Hot Toast com base em Javascript, HTML e CSS.
 O objetivo do projeto é criar um banco dados que pode ser atualizado e editado por usuários.
 Esse banco de dados armazena informações sobre os maiores times do futebol brasileiro.
-Se não encontrou o seu esquadrão favorito, sinta-se à vontade para adicioná-lo.
+Se não encontrou o seu esquadrão favorito, sinta-se à vontade para adicioná-lo. teste
 
 Para visitar o site: [Clique aqui](https://bestsoccerteams.netlify.app/home)
 
