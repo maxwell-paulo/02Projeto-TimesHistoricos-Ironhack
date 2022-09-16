@@ -1,17 +1,17 @@
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
-import logo from "../../images/logo-historic-soccer-teams.png";
+import capa from "../../images/capa-album-copa_1_cleanup.png";
 
 export function Cover() {
   return (
     <>
-      <Link to={"/home"}>
-        <div className={style.container}>
-          <div className={style.imgDiv}>
-            <img src={logo} alt="siteLogo" className={style.img} />
-          </div>
+      <div className={style.container}>
+        <div className={style.imgDiv}>
+          <Link to={"/home"}>
+            <img src={capa} alt="capa do site" className={style.capa} />
+          </Link>
         </div>
-      </Link>
+      </div>
     </>
   );
 }
