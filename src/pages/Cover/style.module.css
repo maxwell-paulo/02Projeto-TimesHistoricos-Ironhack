@@ -4,7 +4,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
-  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -13,7 +16,7 @@
 }
 
 .imgDiv {
-  margin-top: 100px;
+  height: 80%;
   display: flex;
   justify-content: center;
 }

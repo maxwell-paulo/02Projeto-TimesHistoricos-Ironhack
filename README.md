@@ -27,6 +27,6 @@ para saber mais, [veja essa apresentação](https://prezi.com/view/M1gTf4VuvmzQ4
 
 [Linkedin](https://www.linkedin.com/in/-maxpaulo/)
 
-<img src="./src/images/site-header.png" alt="site logo" width="80%"/>
+<img src="./src/images/site-cover.png" alt="site logo" width="80%"/>
 <img src="./src/images/site-home.png" alt="site logo" width="80%"/>
 <img src="./src/images/site-form.png" alt="site logo" width="80%"/>
