@@ -183,6 +183,7 @@ export function EditPage() {
                 type="text"
                 value={titles.title}
                 onChange={handleChangeTitle}
+                placeholder="Escreva aqui o título que o fez ser memorável."
               />
               <button
                 className={style.AddBtn}

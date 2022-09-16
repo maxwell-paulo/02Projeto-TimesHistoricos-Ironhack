@@ -175,6 +175,7 @@ export function AddCromo() {
                 type="text"
                 value={titles.title}
                 onChange={titleHandleChange}
+                placeholder="Escreva aqui o título que o fez ser memorável."
               />
               <button
                 className={style.AddBtn}

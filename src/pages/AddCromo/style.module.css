@@ -169,10 +169,45 @@
     cursor: pointer;
 }
 
+.delBtn:hover {
+    border: none;
+    background-color: #c94f5c;
+    
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.delBtn:active {
+    border: none;
+    background-color: #992531;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
 .AddBtn {
     height: 30px;
     border: none;
     background-color: #2d6fbb;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.AddBtn:hover {
+    height: 30px;
+    border: none;
+    background-color: #4b7fbb;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.AddBtn:active {
+    height: 30px;
+    border: none;
+    background-color: #1f4f86;
     color: white;
     border-radius: 3px;
     cursor: pointer;
@@ -224,6 +259,26 @@
     width: 100px;
     border: none;
     background-color: #2d6fbb;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.colarBtn:hover {
+    height: 50px;
+    width: 100px;
+    border: none;
+    background-color: #4b7fbb;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.colarBtn:active {
+    height: 50px;
+    width: 100px;
+    border: none;
+    background-color: #1f4f86;
     color: white;
     border-radius: 3px;
     cursor: pointer;
