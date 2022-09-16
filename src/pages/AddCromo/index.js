@@ -278,6 +278,7 @@ export function AddCromo() {
                 type="button"
                 onClick={handleAddPlayer}
                 required
+
               >
                 Adicionar
               </button>
