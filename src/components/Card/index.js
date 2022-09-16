@@ -4,7 +4,6 @@ export function Card(props) {
   const { team, year, team_logo } = props;
 
   return (
-    <>
       <div className={style.goldBg}>
         <div className={style.card}>
           <div className={style.teamLogo}>
@@ -16,6 +15,5 @@ export function Card(props) {
           </div>
         </div>
       </div>
-    </>
   );
 }
