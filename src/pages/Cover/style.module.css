@@ -7,7 +7,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
   position: absolute;
   top: 0px;
   right: 0px;
@@ -15,8 +14,9 @@
   left: 0px;
 }
 
-.imgDiv {
-  height: 80%;
-  display: flex;
-  justify-content: center;
+.capa {
+  max-height: 90vh;
+  max-width: 90vw;
 }
+
+
