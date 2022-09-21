@@ -44,11 +44,9 @@ export function AboutUs() {
               <a
                 classname={style.linkStyle}
                 style={{ textDecoration: "none", color: "#965083" }}
-                href="https://github.com/IgorALopes/02Projeto-TimesHistoricos-Ironhack"
-
+                href="https://github.com/IgorALopes/historic-soccer-teams"
                 target="_blank"
                 rel="noreferrer"
-
               >
                 Clique aqui
               </a>
@@ -61,13 +59,11 @@ export function AboutUs() {
               <h3>Igor Lopes</h3>
               <img className={style.ourCromo} src={igor} alt="max-cromo" />
               <div className={style.ourLinks}>
-
                 <a
                   href="https://github.com/IgorALopes"
                   target="_blank"
                   rel="noreferrer"
                 >
-
                   <button className={style.btn}>
                     <img className={style.img} src={github} alt="giticon" />
                   </button>
@@ -78,7 +74,6 @@ export function AboutUs() {
                   target="_blank"
                   rel="noreferrer"
                 >
-
                   <button className={style.btn}>
                     <img
                       className={style.img}
@@ -94,13 +89,11 @@ export function AboutUs() {
               <img className={style.ourCromo} src={max} alt="max-cromo" />
 
               <div className={style.ourLinks}>
-
                 <a
                   href="https://github.com/maxwell-paulo"
                   target="_blank"
                   rel="noreferrer"
                 >
-
                   <button className={style.btn}>
                     <img className={style.img} src={github} alt="giticon" />
                   </button>
@@ -111,7 +104,6 @@ export function AboutUs() {
                   target="_blank"
                   rel="noreferrer"
                 >
-
                   <button className={style.btn}>
                     <img
                       className={style.img}
