@@ -1,6 +1,6 @@
 import style from "./style.module.css";
 import { Link } from "react-router-dom";
-import capa from "../../images/capa-album-copa_1_cleanup.png";
+import capa from "../../images/capa-album-copa.png";
 
 export function Cover() {
   return (
