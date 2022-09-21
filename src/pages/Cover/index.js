@@ -6,11 +6,9 @@ export function Cover() {
   return (
     <>
       <div className={style.container}>
-        <div className={style.imgDiv}>
-          <Link to={"/home"}>
-            <img src={capa} alt="capa do site" className={style.capa} />
-          </Link>
-        </div>
+        <Link to={"/home"}>
+          <img src={capa} alt="capa do site" className={style.capa} />
+        </Link>
       </div>
     </>
   );
