@@ -1,4 +1,4 @@
-import axios from "axios";
+import { api } from "../../api/api.js";
 import { useState, useEffect } from "react";
 import Select from "react-select";
 import { useNavigate } from "react-router-dom";
@@ -19,9 +19,7 @@ export function SearchBar() {
   useEffect(() => {
     async function fetchTeam() {
       try {
-        const response = await axios.get(
-          `https://ironrest.herokuapp.com/TheBestSoccerTeams`
-        );
+        const response = await api.get(`/teams`);
         setTeamList(response.data);
       } catch (error) {
         console.log(error);
