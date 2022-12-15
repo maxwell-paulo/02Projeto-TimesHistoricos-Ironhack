@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import { api } from "../../api/api.js";
 import style from "./style.module.css";
 
 import { useNavigate } from "react-router-dom";
@@ -66,10 +66,7 @@ export function AddCromo() {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "https://ironrest.herokuapp.com/TheBestSoccerTeams",
-        form
-      );
+      const response = await api.post("/team", form);
 
       navigate("/home");
 
@@ -279,7 +276,6 @@ export function AddCromo() {
                 type="button"
                 onClick={handleAddPlayer}
                 required
-
               >
                 Adicionar
               </button>

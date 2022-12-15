@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import { api } from "../../api/api.js";
 import style from "./style.module.css";
 
 import { useNavigate, useParams } from "react-router-dom";
@@ -33,9 +33,7 @@ export function EditPage() {
   useEffect(() => {
     async function fetchCromo() {
       try {
-        const response = await axios.get(
-          `https://ironrest.herokuapp.com/TheBestSoccerTeams/${id}`
-        );
+        const response = await api.get(`/team/${id}`);
         delete response.data._id;
         setForm({ ...response.data });
 
@@ -82,10 +80,7 @@ export function EditPage() {
     e.preventDefault();
 
     try {
-      const response = await axios.put(
-        `https://ironrest.herokuapp.com/TheBestSoccerTeams/${id}`,
-        form
-      );
+      const response = await api.put(`/team/${id}`, form);
 
       navigate("/home");
 

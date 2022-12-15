@@ -2,7 +2,7 @@ import { Card } from "../../components/Card";
 import style from "./style.module.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import { api } from "../../api/api.js";
 import addBtn from "../../images/Add-Button.png";
 import logo from "../../images/logo-historic-soccer-teams.png";
 
@@ -12,9 +12,7 @@ export function Home() {
   useEffect(() => {
     async function fetchCards() {
       try {
-        const response = await axios.get(
-          "https://ironrest.herokuapp.com/TheBestSoccerTeams"
-        );
+        const response = await api.get("/teams");
 
         setCards([...response.data]);
       } catch (err) {
