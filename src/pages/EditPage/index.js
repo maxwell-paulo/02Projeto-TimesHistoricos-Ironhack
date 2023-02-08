@@ -37,7 +37,6 @@ export function EditPage() {
         delete response.data._id;
         setForm({ ...response.data });
 
-        console.log(titles);
       } catch (err) {
         console.log(err);
       }
@@ -47,7 +46,7 @@ export function EditPage() {
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
-    console.log(form);
+
   }
 
   function handleChangeTitle(e) {
@@ -60,7 +59,6 @@ export function EditPage() {
       ...form,
       titles: [...form.titles, titles],
     });
-    console.log(titles);
   }
 
   function handleChangePlayer(e) {
@@ -73,7 +71,6 @@ export function EditPage() {
       ...form,
       players: [...form.players, players],
     });
-    console.log(form);
   }
 
   async function handleSubmit(e) {
@@ -82,9 +79,8 @@ export function EditPage() {
     try {
       const response = await api.put(`/team/${id}`, form);
 
-      navigate("/home");
+      navigate("/");
 
-      console.log(response);
     } catch (err) {
       console.log(err);
     }

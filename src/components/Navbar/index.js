@@ -7,12 +7,12 @@ export function Navbar() {
   return (
     <div className={style.container}>
       <div className={style.nav}>
-        <Link to={"/home"}>
+        <Link to={"/"}>
           <img src={logo} alt="siteLogo" className={style.img} />
         </Link>
         <SearchBar />
         <div className={style.links}>
-          <Link to={"/home"}>
+          <Link to={"/"}>
             <p>Home</p>
           </Link>
           <Link to={`/add-cromo`}>

@@ -2,6 +2,7 @@ import style from "./style.module.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { api } from "../../api/api.js";
 
 export function PlayerCard(props) {
   const { id } = useParams();
@@ -10,9 +11,11 @@ export function PlayerCard(props) {
   useEffect(() => {
     async function fetchCard() {
       try {
-        const response = await axios.get(
-          `https://ironrest.herokuapp.com/TheBestSoccerTeams/${id}`
+        const response = await api.get(
+          `/team/${id}`
         );
+
+console.log(response.data)
 
         setCard(response.data);
       } catch (err) {
