@@ -31,7 +31,6 @@ export function AddCromo() {
 
   function titleHandleChange(e) {
     setTitles({ ...titles, [e.target.name]: e.target.value });
-    console.log(titles);
   }
 
   function handleAddTitle(e) {
@@ -45,7 +44,6 @@ export function AddCromo() {
 
   function playerHandleChange(e) {
     setPlayers({ ...players, [e.target.name]: e.target.value });
-    console.log(players);
   }
 
   function handleAddPlayer(e) {
@@ -59,7 +57,6 @@ export function AddCromo() {
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
-    console.log(form);
   }
 
   async function handleSubmit(e) {
@@ -70,7 +67,7 @@ export function AddCromo() {
 
       navigate("/home");
 
-      console.log(response);
+
     } catch (err) {
       console.log(err);
     }
