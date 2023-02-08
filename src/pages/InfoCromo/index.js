@@ -1,7 +1,7 @@
 import style from "./style.module.css";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { api } from "../../api/api.js";
 import toast from "react-hot-toast";
 import { PlayerCard } from "../../components/PlayerCard";
 
@@ -13,9 +13,7 @@ export function InfoCromo() {
   useEffect(() => {
     async function fetchCard() {
       try {
-        const response = await axios.get(
-          `https://ironrest.herokuapp.com/TheBestSoccerTeams/${id}`
-        );
+        const response = await api.get(`/team/${id}`);
 
         setCard(response.data);
       } catch (err) {
@@ -26,7 +24,7 @@ export function InfoCromo() {
   }, [id]);
 
   function handleToast() {
-    if (card._is_locked === false) {
+    if (card.is_locked === false) {
       toast((t) => (
         <span>
           Tem certeza que deseja <b>excluir</b> esse cromo?
@@ -54,7 +52,7 @@ export function InfoCromo() {
   }
 
   function handleEdit() {
-    if (card._is_locked === false) {
+    if (card.is_locked === false) {
       navigate(`/edit/${id}`);
     } else {
       toast.error("Esse cromo não é editável");
@@ -63,9 +61,7 @@ export function InfoCromo() {
 
   async function handleDelete(t) {
     try {
-      await axios.delete(
-        `https://ironrest.herokuapp.com/TheBestSoccerTeams/${id}`
-      );
+      await api.delete(`/team/${id}`);
 
       toast.dismiss(t.id);
       navigate("/home");
