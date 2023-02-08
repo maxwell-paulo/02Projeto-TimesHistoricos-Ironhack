@@ -79,7 +79,7 @@ export function EditPage() {
     try {
       const response = await api.put(`/team/${id}`, form);
 
-      navigate("/home");
+      navigate("/");
 
     } catch (err) {
       console.log(err);

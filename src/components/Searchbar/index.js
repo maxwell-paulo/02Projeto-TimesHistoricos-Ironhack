@@ -22,7 +22,7 @@ export function SearchBar() {
         const response = await api.get(`/teams`);
         setTeamList(response.data);
       } catch (error) {
-        (error);
+        console.log(error);
       }
     }
     fetchTeam();

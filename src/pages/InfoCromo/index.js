@@ -64,7 +64,7 @@ export function InfoCromo() {
       await api.delete(`/team/${id}`);
 
       toast.dismiss(t.id);
-      navigate("/home");
+      navigate("/");
     } catch (err) {
       console.log(err);
     }

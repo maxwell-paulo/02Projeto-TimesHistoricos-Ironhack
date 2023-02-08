@@ -65,7 +65,7 @@ export function AddCromo() {
     try {
       const response = await api.post("/team", form);
 
-      navigate("/home");
+      navigate("/");
 
 
     } catch (err) {
