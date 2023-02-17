@@ -24,7 +24,7 @@ export function InfoCromo() {
   }, [id]);
 
   function handleToast() {
-    if (card.is_locked === false) {
+    if (card._is_locked === false) {
       toast((t) => (
         <span>
           Tem certeza que deseja <b>excluir</b> esse cromo?
