@@ -52,7 +52,7 @@ export function InfoCromo() {
   }
 
   function handleEdit() {
-    if (card.is_locked === false) {
+    if (card._is_locked === false) {
       navigate(`/edit/${id}`);
     } else {
       toast.error("Esse cromo não é editável");
